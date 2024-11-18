@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Page Layout</title>
+    <link rel="stylesheet" href="menu.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <img src="logo.png" alt="Afrozen Logo" class="logo">
+        <button class="close-btn">Close ✕</button>
+    </header>
+
+    <main class="content">
+        <section class="main-menu">
+            <ul>
+                <li>About us</li>
+                <li>Services</li>
+                <li>Industries</li>
+                <li>Join Catenon</li>
+                <li>Latest thinking</li>
+                <li>Reports</li>
+                <li>Contact</li>
+            </ul>
+        </section>
+
+        <section class="sidebar">
+            <div class="locations">
+                <h3>Locations</h3>
+                <ul>
+                    <li>Bangalore</li>
+                    <li>Delhi</li>
+                    <li>Mumbai</li>
+                    <li>Pune</li>
+                    <li>Singapore</li>
+                </ul>
+            </div>
+
+            <div class="social">
+                <h3>Connect with us</h3>
+                <ul>
+                    <li>LinkedIn</li>
+                    <li>Twitter</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Catenon India</p>
+        <div class="footer-links">
+            <a href="#">PoSH Policy</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+    </footer>
+</div>
+<script>
+    // Select all the menu list items
+const menuItems = document.querySelectorAll('.main-menu li');
+
+// Function to animate the arrow on hover
+menuItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        // Animate arrow with GSAP
+        gsap.to(item.querySelector('::after'), {
+            opacity: 1,
+            x: 10,
+            duration: 0.3,
+            ease: "power2.out"
+        });
+    });
+
+    item.addEventListener('mouseleave', () => {
+        // Animate arrow back to its initial position
+        gsap.to(item.querySelector('::after'), {
+            opacity: 0,
+            x: 30,
+            duration: 0.3,
+            ease: "power2.in"
+        });
+    });
+});
+
+    // Ensure GSAP is included in your project
+gsap.from(".content", {
+    opacity: 0,
+    y: 100,
+    duration: 1.5,
+    ease: "power3.out"
+});
+
+gsap.from(".header", {
+    opacity: 0,
+    y: -50,
+    duration: 1.5,
+    ease: "power3.out",
+    delay: 0.5 // Add a delay for staggered effect
+});
+
+gsap.from(".logo", {
+    opacity: 0,
+    scale: 0.8, // Slightly smaller scale to make it "pop" in
+    duration: 1,
+    ease: "bounce.out",
+    delay: 1.5 // Slight delay for smooth entry
+});
+
+gsap.from(".main-menu li", {
+    opacity: 0,
+    x: -50, // Move from the left side
+    duration: 1,
+    ease: "power4.out",
+    stagger: 0.2, // Stagger each item’s animation
+});
+
+gsap.from(".sidebar", {
+    opacity: 0,
+    x: 100,
+    duration: 1.5,
+    ease: "power3.out",
+    delay: 2 // Delay for smooth entry
+});
+
+</script>
+</body>
+</html>
