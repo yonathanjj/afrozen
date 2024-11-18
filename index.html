@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background with Overlay</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body>
+<div class="background" x-data="{ showOverlay: true }">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <!-- Menu Icon -->
+        <img src="menu.png" alt="Menu Icon" class="menu" x-on:click="window.location.href='menu.html'">
+
+        <!-- Logo in the center -->
+        <img src="logo.png" alt="Afrozen Logo" class="logo">
+
+        <!-- Sign-in Button -->
+        <button class="signin-button">Sign In</button>
+    </nav>
+
+    <div class="overlay-bottom"></div>
+    <div class="overlay-top"></div>
+
+    <!-- Main Links Section -->
+    <div class="main-links">
+        <a href="About.html" class="main-link">Home</a>
+        <a href="projects.html" class="main-link">Games</a>
+        <a href="inquiry.html" class="main-link">Events</a>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="gallery-container">
+        <div class="button-container">
+            <a class="scroll-left">
+                <img src="left.png" alt="Left Icon" class="icon-button">
+            </a>
+            <a class="scroll-right">
+                <img src="right.png" alt="Right Icon" class="icon-button">
+            </a>
+        </div>
+
+        <div class="releases-grid">
+            <img src="image1.jpg" alt="Gallery Image" class="gallery-image">
+            <img src="image2.jpg" alt="Gallery Image" class="gallery-image">
+            <img src="image3.jpg" alt="Gallery Image" class="gallery-image">
+            <img src="image4.jpg" alt="Gallery Image" class="gallery-image">
+            <img src="image5.jpg" alt="Gallery Image" class="gallery-image">
+            <!-- Add more images as needed -->
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
