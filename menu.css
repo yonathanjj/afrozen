@@ -76,35 +76,41 @@ html, body {
 }
 
 .main-menu li {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.8); /* Subtle text color */
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; /* Subtle text color transition */
     padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Horizontal divider between items */
-    position: relative; /* For positioning the arrow */
-    display: block; /* Ensure that the list items are displayed vertically */
+    position: relative;
+    display: block;
 }
 
 .main-menu li:hover {
-    color: #fff;
+    color: rgba(255, 255, 255, 1); /* Slightly brighter text color on hover */
 }
 
-/* Arrow effect on hover */
-.main-menu li::after {
-    content: '→'; /* Unicode arrow */
+/* Horizontal line effect */
+.main-menu li::before {
+    content: '';
     position: absolute;
-    right: -30px; /* Position the arrow next to the text */
-    opacity: 0;
-    transform: translateX(10px); /* Start position */
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    font-size: 24px; /* Arrow size */
-    color: #fff; /* Arrow color */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Keep line visible all the time */
+    height: 2px; /* Normal line height */
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.7)); /* Subtle gradient */
+    transition: all 0.3s ease; /* Animate width and brightness */
 }
 
-.main-menu li:hover::after {
-    opacity: 1;
-    transform: translateX(0); /* Arrow slides in */
+.main-menu li:hover::before {
+    height: 4px; /* Increase the line thickness on hover */
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.7), #fff); /* Bright gradient shift on hover */
 }
+
+/* Optional: Text subtle transformation on hover */
+.main-menu li:hover {
+    font-weight: normal; /* Keep text weight normal on hover */
+    letter-spacing: 1px; /* Slight letter-spacing for a soft effect */
+}
+
 
 /* Sidebar */
 .sidebar {
