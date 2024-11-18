@@ -1,0 +1,182 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background Container */
+.background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('back.jpg') no-repeat center center/cover;
+  overflow: hidden;
+}
+
+/* Smooth gradient overlay from the bottom */
+.overlay-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1.2), rgba(0, 0, 0, 0));
+  transition: opacity 1s ease-in-out;
+}
+
+/* Smooth gradient overlay from the top */
+.overlay-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  transition: opacity 1s ease-in-out;
+}
+
+/* Navigation Bar */
+.navbar {
+  position: fixed; /* Keeps it visible during scrolling */
+  top: 0;
+  width: 100%;
+  height: 6rem; /* Increased height for larger elements */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4rem;
+  z-index: 10;
+}
+
+/* Logo in the center */
+.logo {
+  height: 8rem; /* Desired height */
+  width: auto;
+  cursor: pointer;
+  transform: translateY(1.5rem); /* Moves the logo down */
+}
+
+/* Menu Icon */
+.menu {
+  width: 3.5rem; /* Increased size */
+  height: 3.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.menu img {
+  width: 2.5rem; /* Adjust the icon size */
+  height: 2.5rem;
+}
+
+/* Sign-in Button */
+.signin-button {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  color: white;
+  background: none;
+  border: 2px solid white;
+  border-radius: 30px; /* More curve for aesthetics */
+  padding: 0.8rem 2rem; /* Larger button size */
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.signin-button:hover {
+  background: white;
+  color: black;
+}
+
+/* Centered Navigation Links Container */
+.main-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.5rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1); /* Slight transparency */
+  border-radius: 50px;
+  backdrop-filter: blur(2px); /* Blur the background to create the glass effect */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  position: absolute;
+  top: 10rem; /* Lower the links further down */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+/* Navigation Link Styles */
+.main-link {
+  font-size: 1.33rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #ffffff; /* Default color is white */
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+/* Hover Effect */
+.main-link:hover {
+  background-color: white; /* White background on hover */
+  color: #333; /* Text color changes to dark on hover */
+}
+
+/* Show the indicator when the link is hovered */
+.main-link:hover:after {
+  transform: scaleX(1); /* Makes the white indicator visible */
+}
+
+/* Gallery Container */
+.gallery-container {
+  position: relative;
+  width: 100%;
+  margin-top: 15rem; /* Adjusted space from the top to move it below the main links */
+}
+
+/* Horizontal Scrolling Gallery */
+.releases-grid {
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  gap: 2rem;
+  padding-left: 45rem; /* Adjusted for 16rem */
+}
+
+/* Gallery Image Styles */
+.gallery-image {
+  width: 400px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Scroll Button Container */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: -40px; /* Position above the gallery */
+  left: 16rem; /* Aligned with gallery images */
+  width: calc(100% - 16rem);
+  z-index: 5;
+}
+
+/* Scroll Button Icon */
+.icon-button {
+  width: 50px; /* Set desired size */
+  height: 50px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+}
+
+.icon-button:hover {
+  transform: scale(1.1); /* Enlarge on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
